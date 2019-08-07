@@ -1,2 +1,4 @@
 # RST-Tutorial
 People using my reStructuredText/Sphinx tutorials can access a sample project for every stage. Have a look at the branches for the project - each will align with a tutorial on the Doc Kramer website.
+
+You'll note that after running the sphinx-quickstart script, there are a couple of extra files in this base directory. On Windows machines, these allow you to run a simplified 'make html' script rather than using the more-complex build script. It's only useful if you're creating one end document, and if your master file is in a directory other than the base source/ directory (for example, mine's in source/doc-kramers-rst-tutorial/), you'll need to modify the make.bat file accordingly.
