@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Planning &#8212; Doc Kramer&#39;s RST and Sphinx Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installing Software" href="installing.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="planning">
+<h1>Planning<a class="headerlink" href="#planning" title="Permalink to this headline">¶</a></h1>
+<p>I hate doing extensive, unnecessarily repetitive document maintenance every couple of months – especially when the need for it could have been avoided with better documentation design in the first place. And this is a big strength of Sphinx and RST – together, we can use them to minimise ongoing maintenance time and costs.</p>
+<p>Here are a few of the things to think about before putting your project together:</p>
+<div class="section" id="shared-functionality">
+<h2>Shared functionality<a class="headerlink" href="#shared-functionality" title="Permalink to this headline">¶</a></h2>
+<p>Look at the product(s) that you’ll be documenting. Are there areas in which repetition might occur in documenting functionality? Some examples of this might be:</p>
+<ul class="simple">
+<li>Multiple products sharing a code base</li>
+<li>API calls with the same attributes</li>
+<li>Tasks with the same or very similar workflows.</li>
+</ul>
+<blockquote class="pull-quote">
+<div>Map these areas of overlap before planning the documentation to give you a leg up in creating a single-source solution.</div></blockquote>
+</div>
+<div class="section" id="changeable-names">
+<h2>Changeable names<a class="headerlink" href="#changeable-names" title="Permalink to this headline">¶</a></h2>
+<p>I worked with a company that produced a large, sprawling enterprise software solution and an equally large and sprawling documentation suite. They changed the name of their main product.</p>
+<p>“Is this likely to ever happen again?” I asked, eyeing the dozens of documents now requiring careful find-and-replace missions.</p>
+<p>“Never! This is the first time in twenty years!” I was cheerfully informed.</p>
+<p>So, the doc team spent days combing through documentation on a number of platforms to update the product name. And you guessed it – a few months later, the product name changed again. Cue several more days of an entire team’s work spent changing a product name.</p>
+<p>Why is this applicable? Because if we’d assigned a product name to a variable in that documentation, it would have required maybe a day of one person’s time to change the variable value and re-build the doc suite, then check in the new documents, each time the product name changed.</p>
+<blockquote class="pull-quote">
+<div>List any names that might change as the market does – company names, product names, department names, etc. These should be assigned variables in the documentation if at all possible.</div></blockquote>
+</div>
+<div class="section" id="file-system-structure">
+<h2>File system structure<a class="headerlink" href="#file-system-structure" title="Permalink to this headline">¶</a></h2>
+<p>By default, Sphinx gathers up all RST documents in the base directory for inclusion in an HTML build, even if those documents aren’t referenced in the index or other child documents. This can be a right royal pain in the behind, especially when mixing source documents for multiple products. My favoured solution is to create a child-documents directory for the majority of documents and a base-documents directory for each product, which contains the index and main chapter files, then configure Sphinx to ignore the child-documents directory unless a document is specifically referenced.</p>
+<p>Why am I talking about this in the planning stage? Because using single-sourcing, you’ll create a lot of absolute or relative links between documents, and it can be annoying and time-consuming (speaking from experience) to go back through 100 documents to change each link.</p>
+<blockquote class="pull-quote">
+<div>Figure out in advance, if at all possible, the directory structure that you’ll use for your source material. I recommend using a single directory for the vast majority of documents, another specifically for images, and one base directory for each product.</div></blockquote>
+</div>
+<div class="section" id="code-repository">
+<h2>Code repository<a class="headerlink" href="#code-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you haven’t already set up a code repository for the project, now is a really good time to do it. This doesn’t just provide a non-local backup option if something goes wrong – it also allows for branching and for retrieval of previous revisions if someone accidentally saves over a file or two. Setting up a GitHub repository is probably the easiest and fastest option.</p>
+<blockquote class="pull-quote">
+<div>Set up your code repository before beginning the documentation.</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="doc-kramers-rst-tutorial.html">Doc Kramer's RST and Sphinx Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Software</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shared-functionality">Shared functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changeable-names">Changeable names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-system-structure">File system structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-repository">Code repository</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installing.html" title="previous chapter">Installing Software</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Doc Kramer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/planning.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installing Software &#8212; Doc Kramer&#39;s RST and Sphinx Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Planning" href="planning.html" />
+    <link rel="prev" title="Welcome to Doc Kramer’s RST and Sphinx Tutorial’s documentation!" href="doc-kramers-rst-tutorial.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installing-software">
+<h1>Installing Software<a class="headerlink" href="#installing-software" title="Permalink to this headline">¶</a></h1>
+<p>This is the first post in a series that will explore using RST and Sphinx to create technical documentation. And the first question to answer is: what are these tools?</p>
+<div class="section" id="restructuredtext">
+<h2>reStructuredText<a class="headerlink" href="#restructuredtext" title="Permalink to this headline">¶</a></h2>
+<p>reStructured Text is a markup language also known as ReST and RST. It uses symbols and tags to specify basic formatting options, which can be built upon later. Because it can be used to create docs like code, it’s often popular in software development environments. RST has a lot of similarities to Markdown, but it’s designed more with technical documentation in mind.</p>
+</div>
+<div class="section" id="sphinx">
+<h2>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx is the renderer/builder portion of the duo. It takes reStructuredText documents, and turns them into HTML, PDF, LaTeX, or ePub format – with pretty headers and headings, too, if that’s your thing. Sphinx runs on Python, since it was originally designed to create documentation for Python projects.</p>
+<p>One thing you need to know up-front: Sphinx requires a fair bit of command-line use.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-1-install-python">
+<h2>Step 1: Install Python<a class="headerlink" href="#step-1-install-python" title="Permalink to this headline">¶</a></h2>
+<p>To use Sphinx, you need Python installed on your machine. Most operating systems come with Python as standard, but Windows isn’t one of them. See <a class="reference external" href="https://www.python.org/downloads/windows/">Python Releases for Windows</a> – at the time of writing you need Python 3+ to run Sphinx.</p>
+</div>
+<div class="section" id="step-2-install-sphinx">
+<h2>Step 2: Install Sphinx<a class="headerlink" href="#step-2-install-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>The Sphinx team have created a great resource for <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/installation.html">installing Sphinx on various operating systems</a>.</p>
+</div>
+<div class="section" id="step-3-set-up-a-code-repository">
+<h2>Step 3: Set up a code repository<a class="headerlink" href="#step-3-set-up-a-code-repository" title="Permalink to this headline">¶</a></h2>
+<p>This is an optional but highly-recommended part of the process. Using a code repository – preferably not on your usual work machine – for your documentation project has several advantages:</p>
+<ul class="simple">
+<li>Backup</li>
+<li>Easy sharing of source documents</li>
+<li>Branching (this might not seem necessary, but so many software projects end up with multiple versions available to the public – and the documentation really should be available for each supported version)</li>
+</ul>
+<p>Popular repository solutions are Git and CVS, but there are a stack more available too. Of them all, GitHub is arguably the simplest to set up and get running. And having a free (but public) option certainly helps.</p>
+<p>While you will almost certainly need to install other utilities as you get further into creating your user manual, you now have everything that you need to start an RST/Sphinx project.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="doc-kramers-rst-tutorial.html">Doc Kramer's RST and Sphinx Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#restructuredtext">reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-install-python">Step 1: Install Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-install-sphinx">Step 2: Install Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-set-up-a-code-repository">Step 3: Set up a code repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="doc-kramers-rst-tutorial.html" title="previous chapter">Welcome to Doc Kramer’s RST and Sphinx Tutorial’s documentation!</a></li>
+      <li>Next: <a href="planning.html" title="next chapter">Planning</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Doc Kramer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/installing.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
