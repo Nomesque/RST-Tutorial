@@ -10,6 +10,8 @@
    a command or comment, not content that should be added to the build. As long as I
    indent three spaces and don't add a blank line, this is all treated as part of
    the same block.
+   Each entry below (eg. 'planning') corresponds to a base document located in the 
+   same directory as this master file.
 
 Welcome to Doc Kramer's RST and Sphinx Tutorial's documentation!
 ================================================================
@@ -17,6 +19,9 @@ Welcome to Doc Kramer's RST and Sphinx Tutorial's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   installing
+   planning
 
 
 

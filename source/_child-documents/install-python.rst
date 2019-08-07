@@ -1,0 +1,1 @@
+To use Sphinx, you need Python installed on your machine. Most operating systems come with Python as standard, but Windows isn’t one of them. See `Python Releases for Windows <https://www.python.org/downloads/windows/>`_ – at the time of writing you need Python 3+ to run Sphinx. 

@@ -1,0 +1,1 @@
+The Sphinx team have created a great resource for `installing Sphinx on various operating systems <http://www.sphinx-doc.org/en/master/usage/installation.html>`_.
