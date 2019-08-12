@@ -23,7 +23,8 @@ Welcome to Doc Kramer's RST and Sphinx Tutorial's documentation!
    installing
    planning
    directory-structure
-
+   master-file
+   base-documents
 
 
 Indices and tables

@@ -1,0 +1,36 @@
+Base documents
+==============
+
+In a Sphinx project, ‘base documents’ are like the skeleton of a manual. In a table of contents, they’ll show up as the chapter headings.
+
+Save base documents with master file
+------------------------------------
+
+These base documents need to be in the same directory as your master file (by default called index.rst), and they need to have the file extension that you entered into the sphinx-quickstart script.
+
+Create master file and base documents for each manual
+-----------------------------------------------------
+
+If you’ll be setting up multiple manuals in RST and Sphinx, I recommend that you create a master file and base documents for every manual. This is because:
+
+* Variables need to be specified in each base document to reliably propagate through a manual when you build it.
+* Due to the master file format that Sphinx uses, base documents need to be located in the same directory as the master file.
+
+.. include:: ../child-documents/assign-directory-each-manual.rst
+
+.. include:: ../child-documents/inside-your-base-documents.rst
+
+Example base document
+---------------------
+
+.. code-block::
+   ====================
+   Introduction
+   ====================
+   
+   .. include:: ../children/intro-text.rst
+   .. include:: ../children/whats-in-user-guide.rst
+   .. include:: ../children/customer-support-contact.rst
+   .. include:: variables.rst
+
+.. note:: ``variables.rst`` is a child document that I use to hold project variables. This isn't the only way to do it - but it's a simple option. More on variables later.
