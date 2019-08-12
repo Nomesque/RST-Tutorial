@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Master File &#8212; Doc Kramer&#39;s RST and Sphinx Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Base documents" href="base-documents.html" />
+    <link rel="prev" title="Directory Structure" href="directory-structure.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="master-file">
+<h1>Master File<a class="headerlink" href="#master-file" title="Permalink to this headline">¶</a></h1>
+<p>A master file controls almost all of the content that will be included in your user manual. It contains a list of your base documents and specifies what your table of contents will look like.</p>
+<div class="section" id="example-master-file">
+<h2>Example master file<a class="headerlink" href="#example-master-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="cp">.. Example User Guide documentation master file, created by</span>
+<span class="cp">   sphinx-quickstart.</span>
+<span class="cp">   You can adapt this file completely to your liking, but it should at</span>
+<span class="cp">   least contain the root toctree directive.</span>
+
+<span class="gh">=========================</span>
+<span class="gh">Example User Guide</span>
+<span class="gh">=========================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> <span class="nf">2</span>
+   <span class="nc">:caption:</span> <span class="nf">Contents</span>
+
+   introduction
+   common-terminology
+   software-supported
+   installing-product
+   using-product
+   troubleshooting
+   advanced-options
+   back-matter
+</pre></div>
+</div>
+</div>
+<div class="section" id="inside-your-master-file">
+<h2>Inside your master file<a class="headerlink" href="#inside-your-master-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comment">
+<h3>Comment<a class="headerlink" href="#comment" title="Permalink to this headline">¶</a></h3>
+<p>By default, this contains a statement about the sphinx-quickstart script creating the master file, and when. Not overly helpful. Replace with your own text, for example the author(s) and what the manual is for.</p>
+<p>Keep the following points in mind:</p>
+<ul class="simple">
+<li>You need the initial .. and space.</li>
+<li>When starting a new line of the comment, indent it three spaces.</li>
+</ul>
+</div>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<p>This is displayed before the table of contents, once built. In a PDF, it will be on the title page, and the table of contents on the next page. In HTML output, it will be used for the page title of index.html.</p>
+</div>
+<div class="section" id="toctree-directive">
+<h3>toctree directive<a class="headerlink" href="#toctree-directive" title="Permalink to this headline">¶</a></h3>
+<p>This directive builds the table of contents and also designates the base documents that make up the skeleton of your manual.</p>
+<p>It consists of:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">..</span></code> indicates a directive – something that Sphinx needs to recognise as not just text.</li>
+<li><code class="docutils literal notranslate"><span class="pre">toctree</span></code> tells Sphinx that it needs to create a table of contents.</li>
+<li><code class="docutils literal notranslate"><span class="pre">::</span></code> is the standard RST connection between a command and the information Sphinx needs – in this case, some parameters and then file names.</li>
+<li><code class="docutils literal notranslate"><span class="pre">:max-depth:</span></code> is a parameter for the directive. In the example above, it’s set to 2; the table of contents will include level 1 and 2 headings only. Increase or decrease this depending on the granularity you want in your TOC.</li>
+<li><code class="docutils literal notranslate"><span class="pre">:caption:</span></code> is the heading on the table of contents. I’ve used Contents, but you might want Table of Contents or other text.</li>
+<li>The blank line after the caption tells Sphinx that you’ve finished setting parameters for the directive.</li>
+<li>The list of file names, one per line, give Sphinx the exact names of the base documents minus their file extension. Sphinx will extract headings from these documents – and any subdocuments they include – for inclusion in the table of contents.</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>Make sure the build script will be able to find your master file. Check that the corresponding conf.py file has the correct master_doc and source_suffix settings.</p>
+<p>For example, if your master file is named index.rst, then master_doc must be set to ‘index’ and source_suffix to ‘.rst’.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="doc-kramers-rst-tutorial.html">Doc Kramer's RST and Sphinx Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directory-structure.html">Directory Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Master File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-master-file">Example master file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inside-your-master-file">Inside your master file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="base-documents.html">Base documents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="directory-structure.html" title="previous chapter">Directory Structure</a></li>
+      <li>Next: <a href="base-documents.html" title="next chapter">Base documents</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Doc Kramer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/master-file.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

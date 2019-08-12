@@ -8,9 +8,10 @@ Level 1 Heading
 
 RST uses lines of punctuation to mark a heading. For example, this is what I use for a level 1 heading:
 
-.. code-block:: 
-   Heading text
-   =============
+.. code-block:: RST
+
+  Heading text
+  =============
 
 The first heading in a base document will be used:
 
@@ -37,11 +38,12 @@ To maximise your single-sourcing, I recommend that you put as much of your text 
 
 Link to a child document like this:
 
-.. code-block:: 
-   .. include:: ../children/welcome.rst
+.. code-block:: RST
+
+  .. include:: ../children/welcome.rst
 
 The key parts of the statement above are:
 
 * ``..`` indicates a directive – something that Sphinx needs to recognise as not just text. Note the space after it.
 * ``include`` tells Sphinx to use the contents of a different file.
-* ``:: `` is the standard RST connection between a command and the information Sphinx needs – in this case, a file location and name. 
+* ``::`` is the standard RST connection between a command and the information Sphinx needs – in this case, a file location and name. 

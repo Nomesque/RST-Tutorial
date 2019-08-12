@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Directory Structure &#8212; Doc Kramer&#39;s RST and Sphinx Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Master File" href="master-file.html" />
+    <link rel="prev" title="Planning" href="planning.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="directory-structure">
+<h1>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h1>
+<p>Before getting into the meat of a project and writing the documents, I recommend having a serious think about your directory structure.</p>
+<div class="section" id="why-does-it-matter">
+<h2>Why does it matter?<a class="headerlink" href="#why-does-it-matter" title="Permalink to this headline">¶</a></h2>
+<p>The source directory structure that you choose will end up embedded in a lot of documents. That includes configuration files and every single internal hyperlink created. It’s possible to go back through and change things later, but it’s also a pain in the neck.</p>
+</div>
+<div class="section" id="basic-project-file-structure">
+<h2>Basic project file structure<a class="headerlink" href="#basic-project-file-structure" title="Permalink to this headline">¶</a></h2>
+<p>Each Sphinx documentation project needs the following directories and files:</p>
+<ul class="simple">
+<li><strong>Source directory</strong> – contains all the source material, arranged in directories, for a project.</li>
+<li><strong>Master file</strong> (by default, called index.rst) – this is the backbone of a manual that links to all the top-level documents.</li>
+<li><strong>Configuration file</strong> (conf.py) – provides information for the build script on how to create various end formats for a manual.</li>
+<li><strong>Images directory</strong> – contains all screenshots, diagrams, etc used in the project. If you’re incorporating video and audio files into your doco, this could be a media directory instead, or you could add video and audio directories.</li>
+<li><strong>Templates directory</strong> – standard Sphinx directory that contains files it needs to build various end formats for a manual.</li>
+<li><strong>Base documents</strong> – think of these as your ‘Heading 1’ documents that you’d want displayed in a basic one-level table of contents.</li>
+<li><strong>Child documents</strong> – every other document that might be shared between multiple manuals, or multiple versions of the same manual.</li>
+<li><strong>Build directory</strong> – this is where your end product manuals will be saved.</li>
+</ul>
+<p>Your project’s directory structure will end up looking something like this:</p>
+<a class="reference internal image-reference" href="_images/Sphinx-directories.png"><img alt="Diagram showing a standard directory structure in a reStructuredText project. The first level of the directory structure (on the left) includes Source directory and Build  directory. Subdirectories of Source are Child documents directory, Document1 directory, Images directory, and Templates directory. In Document1 directory are index.rst, conf.py, and Base files. Subdirectory of Build directory is Document1 directory. Subdirectories of Document1 are Format1 directory and Format2 directory." src="_images/Sphinx-directories.png" style="width: 80%;" /></a>
+<p>You’ll need an master file for every manual that you’ll create, and a conf.py file for every format that you create. Unless you have a huge number of manuals to produce, I suggest you create a conf.py file for every manual. That makes for a simpler build process.</p>
+</div>
+<div class="section" id="why-use-a-child-documents-directory">
+<h2>Why use a child-documents directory?<a class="headerlink" href="#why-use-a-child-documents-directory" title="Permalink to this headline">¶</a></h2>
+<p>When I started my first Sphinx/RST project, I didn’t use a child-documents directory. I found that builds took a long time, and incorporated every single document in the base documents directory into HTML output. It didn’t matter whether I’d linked them into a particular document or not. That was a pain. When users searched the HTML knowledge base, the results could include pages that weren’t supposed to be there.</p>
+<p>Then I needed to amend the documentation to allow for two different versions of the same product (free and premium). I ran into even more problems trying to ensure that the right files made it into the right builds. Moral of the story: unless you’re absolutely sure that every file you create will be needed in the final build, and you’ll never have to worry about creating multiple versions of a manual or multiple manuals for a product… use a child-documents directory.</p>
+<p>Your initial instinct will probably be to create a child-documents directory for every manual or product. Unless these will have absolutely zero content in common, though, I recommend that you use a top-level child-documents directory instead. You’ll find it easier to locate and link between child documents.</p>
+<blockquote class="pull-quote">
+<div>When you use a child-documents directory, you can save build time, improve build sanitation, and optimise your re-use of source material.</div></blockquote>
+</div>
+<div class="section" id="build-document-format-or-build-format">
+<h2>Build/document/format or build/format/ ?<a class="headerlink" href="#build-document-format-or-build-format" title="Permalink to this headline">¶</a></h2>
+<p>You might need a different build directory structure to mine. I created mine based on a single document – a user guide – for free and premium editions of the same product.</p>
+<p>If you’re creating documentation for multiple products, you might create your directory structure more like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">directory</span> <span class="pre">&gt;</span> <span class="pre">Product1</span> <span class="pre">directory</span> <span class="pre">&gt;</span> <span class="pre">Guide1</span> <span class="pre">directory</span> <span class="pre">&gt;</span> <span class="pre">Format1</span> <span class="pre">directory</span></code></p>
+<p>Or, if you’re producing multiple documents for the one product – especially if those documents will be merged into a knowledge base – you might create your directory structure like this:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>Build directory &gt; Format1 directory ``</p>
+<p>Build directory changes are easier to implement than source directory changes, so don’t worry if you’re not certain right now which structure you’ll need – it will quickly become evident!</p>
+<blockquote class="pull-quote">
+<div>Your build directory structure will depend on the number of products, manuals, and formats that you need to produce.</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="doc-kramers-rst-tutorial.html">Doc Kramer's RST and Sphinx Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Directory Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-does-it-matter">Why does it matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-project-file-structure">Basic project file structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-use-a-child-documents-directory">Why use a child-documents directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-document-format-or-build-format">Build/document/format or build/format/ ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="master-file.html">Master File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base-documents.html">Base documents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="planning.html" title="previous chapter">Planning</a></li>
+      <li>Next: <a href="master-file.html" title="next chapter">Master File</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Doc Kramer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/directory-structure.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
