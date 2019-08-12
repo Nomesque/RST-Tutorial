@@ -8,7 +8,7 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set SOURCEDIR=source/doc-kramers-rst-tutorial
-set BUILDDIR=build
+set BUILDDIR=build/doc-kramers-rst-tutorial
 
 if "%1" == "" goto help
 

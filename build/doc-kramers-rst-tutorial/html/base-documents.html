@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Base documents &#8212; Doc Kramer&#39;s RST and Sphinx Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Master File" href="master-file.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="base-documents">
+<h1>Base documents<a class="headerlink" href="#base-documents" title="Permalink to this headline">¶</a></h1>
+<p>In a Sphinx project, ‘base documents’ are like the skeleton of a manual. In a table of contents, they’ll show up as the chapter headings.</p>
+<div class="section" id="save-base-documents-with-master-file">
+<h2>Save base documents with master file<a class="headerlink" href="#save-base-documents-with-master-file" title="Permalink to this headline">¶</a></h2>
+<p>These base documents need to be in the same directory as your master file (by default called index.rst), and they need to have the file extension that you entered into the sphinx-quickstart script.</p>
+</div>
+<div class="section" id="create-master-file-and-base-documents-for-each-manual">
+<h2>Create master file and base documents for each manual<a class="headerlink" href="#create-master-file-and-base-documents-for-each-manual" title="Permalink to this headline">¶</a></h2>
+<p>If you’ll be setting up multiple manuals in RST and Sphinx, I recommend that you create a master file and base documents for every manual. This is because:</p>
+<ul class="simple">
+<li>Variables need to be specified in each base document to reliably propagate through a manual when you build it.</li>
+<li>Due to the master file format that Sphinx uses, base documents need to be located in the same directory as the master file.</li>
+</ul>
+</div>
+<div class="section" id="assign-a-directory-to-each-manual">
+<h2>Assign a directory to each manual<a class="headerlink" href="#assign-a-directory-to-each-manual" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx makes some weird assumptions that can trip up anyone trying to create a more complicated setup for the first time:</p>
+<ul class="simple">
+<li>The configuration file is named conf.py.</li>
+<li>conf.py is in the same directory as the master file.</li>
+</ul>
+<p>The problem: if you’re writing multiple manuals, you’ll need to:</p>
+<ul class="simple">
+<li>Have multiple master files.</li>
+<li>(potentially) Set different configuration values for each.</li>
+</ul>
+<p>My recommendation: assign a directory for each manual. In this directory, create:</p>
+<ul class="simple">
+<li>A configuration file (conf.py).</li>
+<li>A master file.</li>
+<li>Base documents.</li>
+</ul>
+</div>
+<div class="section" id="inside-your-base-documents">
+<h2>Inside your base documents<a class="headerlink" href="#inside-your-base-documents" title="Permalink to this headline">¶</a></h2>
+<p>We’ll go into formatting in depth later, but here are the basics that you’ll need.</p>
+<div class="section" id="level-1-heading">
+<h3>Level 1 Heading<a class="headerlink" href="#level-1-heading" title="Permalink to this headline">¶</a></h3>
+<p>RST uses lines of punctuation to mark a heading. For example, this is what I use for a level 1 heading:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading text</span>
+<span class="gh">=============</span>
+</pre></div>
+</div>
+<p>The first heading in a base document will be used:</p>
+<ul class="simple">
+<li>As a chapter heading in the table of contents.</li>
+<li>To designate that punctuation character as a ‘level one’ heading.</li>
+</ul>
+<p>The character that you use for each heading level must be consistent. For example, once I use = for a level 1 heading, I must use = for all other level 1 headings. I must use a different character for level 2 headings.</p>
+<p>Here are the key requirements for heading markers:</p>
+<ul class="simple">
+<li>Must use one of these characters: <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">&quot;</span> <span class="pre">#</span> <span class="pre">$</span> <span class="pre">%</span> <span class="pre">&amp;</span> <span class="pre">'</span> <span class="pre">(</span> <span class="pre">)</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">,</span> <span class="pre">–</span> <span class="pre">.</span> <span class="pre">/</span> <span class="pre">:</span> <span class="pre">;</span> <span class="pre">&lt;</span> <span class="pre">=</span> <span class="pre">&gt;</span> <span class="pre">?</span> <span class="pre">&#64;</span> <span class="pre">[</span> <span class="pre">\</span> <span class="pre">]</span> <span class="pre">^</span> <span class="pre">_</span> <span class="pre">`</span> <span class="pre">{</span> <span class="pre">|</span> <span class="pre">}</span> <span class="pre">~</span></code></li>
+<li>Each line of punctuation must have as many or more characters than the heading text.</li>
+<li>Must include a line of punctuation under the heading text.</li>
+<li>A line of punctuation above the heading text <strong>may</strong> be included, but isn’t mandatory.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recommendation: Create a style guide as you go that specifies the punctuation used in each heading level. Otherwise, confusion is almost guaranteed.</p>
+</div>
+<p><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections">See the heading characters used in Python’s Style Guide</a>.</p>
+</div>
+<div class="section" id="links-to-child-documents">
+<h3>Links to child documents<a class="headerlink" href="#links-to-child-documents" title="Permalink to this headline">¶</a></h3>
+<p>To maximise your single-sourcing, I recommend that you put as much of your text as possible into child documents. So your base documents will consist primarily of a level-one heading and links to child documents.</p>
+<p>Link to a child document like this:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">include</span><span class="p">::</span> ../children/welcome.rst
+</pre></div>
+</div>
+<p>The key parts of the statement above are:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">..</span></code> indicates a directive – something that Sphinx needs to recognise as not just text. Note the space after it.</li>
+<li><code class="docutils literal notranslate"><span class="pre">include</span></code> tells Sphinx to use the contents of a different file.</li>
+<li><code class="docutils literal notranslate"><span class="pre">::</span></code> is the standard RST connection between a command and the information Sphinx needs – in this case, a file location and name.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="example-base-document">
+<h2>Example base document<a class="headerlink" href="#example-base-document" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">====================</span>
+<span class="gh">Introduction</span>
+<span class="gh">====================</span>
+
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> ../children/intro-text.rst
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> ../children/whats-in-user-guide.rst
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> ../children/customer-support-contact.rst
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> variables.rst
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">variables.rst</span></code> is a child document that I use to hold project variables. This isn’t the only way to do it - but it’s a simple option. More on variables later.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="doc-kramers-rst-tutorial.html">Doc Kramer's RST and Sphinx Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directory-structure.html">Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-sphinx-quickstart.html">Using sphinx-quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="master-file.html">Master File</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Base documents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#save-base-documents-with-master-file">Save base documents with master file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-master-file-and-base-documents-for-each-manual">Create master file and base documents for each manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assign-a-directory-to-each-manual">Assign a directory to each manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inside-your-base-documents">Inside your base documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-base-document">Example base document</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="master-file.html" title="previous chapter">Master File</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Doc Kramer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/base-documents.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

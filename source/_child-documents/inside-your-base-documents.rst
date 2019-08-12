@@ -8,9 +8,10 @@ Level 1 Heading
 
 RST uses lines of punctuation to mark a heading. For example, this is what I use for a level 1 heading:
 
-.. code-block:: 
-   Heading text
-   =============
+.. code-block:: RST
+
+  Heading text
+  =============
 
 The first heading in a base document will be used:
 
@@ -21,14 +22,14 @@ The character that you use for each heading level must be consistent. For exampl
 
 Here are the key requirements for heading markers:
 
-* Must use one of these characters: ! ” # $ % & ‘ ( ) * + , – . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+* Must use one of these characters: ``! " # $ % & ' ( ) * + , – . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``
 * Each line of punctuation must have as many or more characters than the heading text.
 * Must include a line of punctuation under the heading text.
 * A line of punctuation above the heading text **may** be included, but isn’t mandatory.
 
 .. note:: Recommendation: Create a style guide as you go that specifies the punctuation used in each heading level. Otherwise, confusion is almost guaranteed.
 
-`See the heading characters used in Python’s Style Guide <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections>`.
+`See the heading characters used in Python’s Style Guide <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections>`_.
 
 Links to child documents
 ........................
@@ -37,11 +38,12 @@ To maximise your single-sourcing, I recommend that you put as much of your text 
 
 Link to a child document like this:
 
-.. code-block:: 
-   .. include:: ../children/welcome.rst
+.. code-block:: RST
+
+  .. include:: ../children/welcome.rst
 
 The key parts of the statement above are:
 
 * ``..`` indicates a directive – something that Sphinx needs to recognise as not just text. Note the space after it.
 * ``include`` tells Sphinx to use the contents of a different file.
-* ``:: `` is the standard RST connection between a command and the information Sphinx needs – in this case, a file location and name. 
+* ``::`` is the standard RST connection between a command and the information Sphinx needs – in this case, a file location and name. 
