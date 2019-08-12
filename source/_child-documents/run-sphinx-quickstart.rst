@@ -13,7 +13,7 @@ Basic configuration
 
 The ``sphinx-quickstart`` script will start asking you questions about your project. I’ve listed the questions, with recommended answers (where appropriate):
 
-**Separate source and build directories (y/n) [n]:**``y``
+**Separate source and build directories (y/n) [n]:** ``y``
 
 I recommend separating the source and build directories because generally these will each belong to different phases of a project’s life cycle.
 
@@ -37,7 +37,7 @@ The script adds this value to conf.py in the source directory. Generally you’l
 
 **Project language [en]:** ``(press Enter)``
 
-If you’ll be writing documentation in English, then all you need to do is press Enter. Otherwise, check this `list of language codes <http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language>` and enter the two-letter code that matches the language you’ll be using.
+If you’ll be writing documentation in English, then all you need to do is press Enter. Otherwise, check this `list of language codes <http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language>`_ and enter the two-letter code that matches the language you’ll be using.
 
 **Source file suffix [.rst]:** ``(press Enter)``
 
@@ -64,15 +64,15 @@ The sphinx-quickstart script will add options you enter here to the conf.py file
 
 **\*autodoc: automatically insert docstrings from modules (y/n) [n]:** ``(press Enter)``
 
-Autodoc takes docstrings from Python code. If you’re not creating documentation from code comments, you won’t need this extension enabled. If you are, though, there’s a good walkthrough here: `Getting Started with Sphinx / Autodoc <https://medium.com/@eikonomega/getting-started-with-sphinx-autodoc-part-1-2cebbbca5365>`.
+Autodoc takes docstrings from Python code. If you’re not creating documentation from code comments, you won’t need this extension enabled. If you are, though, there’s a good walkthrough here: `Getting Started with Sphinx / Autodoc <https://medium.com/@eikonomega/getting-started-with-sphinx-autodoc-part-1-2cebbbca5365>`_.
 
 **\*doctest: automatically test code snippets in doctest blocks (y/n) [n]:** ``(press Enter)``
 
-The doctest extension checks the code snippets included in your docstrings. Again, if you’re not creating documentation from code comments, you won’t need this. If you are, check out this article: `How to include test in your Python docstrings using doctest <https://thomas-cokelaer.info/tutorials/sphinx/doctest.html>`.
+The doctest extension checks the code snippets included in your docstrings. Again, if you’re not creating documentation from code comments, you won’t need this. If you are, check out this article: `How to include test in your Python docstrings using doctest <https://thomas-cokelaer.info/tutorials/sphinx/doctest.html>`_.
 
 **\*intersphinx: link between Sphinx documentation of different projects (y/n) [n]:** ``(press Enter)``
 
-You’ll only need the intersphinx extension if you’re creating documentation from code comments AND want to easily link to existing code documentation. See: `Link to other projects’ documentation <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx>`.
+You’ll only need the intersphinx extension if you’re creating documentation from code comments AND want to easily link to existing code documentation. See: `Link to other projects’ documentation <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx>`_.
 
 **todo: write “todo” entries that can be shown or hidden on build (y/n) [n]:** ``y``
 
@@ -92,7 +92,7 @@ If you’re including complex mathematical equations in your documentation AND w
 
 **\*ifconfig: conditional inclusion of content based on config values (y/n) [n]:** ``(press Enter)``
 
-I’m not a fan of this extension; I prefer to include or exclude documents and text using only statements and build parameters. It could be useful for some situations, though – see `ifconfig documentation <https://kite.com/python/docs/sphinx.ext.ifconfig>`.
+I’m not a fan of this extension; I prefer to include or exclude documents and text using only statements and build parameters. It could be useful for some situations, though – see `ifconfig documentation <https://kite.com/python/docs/sphinx.ext.ifconfig>`_.
 
 **\*viewcode: include links to the source code of documented Python objects (y/n) [n]:** ``(press Enter)``
 

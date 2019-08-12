@@ -16,6 +16,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Master File" href="master-file.html" />
+    <link rel="prev" title="Directory Structure" href="directory-structure.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -51,7 +53,7 @@ In Windows, press the Windows key and R (Windows icon-R), enter <code class="doc
 <div class="section" id="basic-configuration">
 <h3>Basic configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> script will start asking you questions about your project. I’ve listed the questions, with recommended answers (where appropriate):</p>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Separate source and build directories (y/n) [n]:<a href="#id3"><span class="problematic" id="id4">**</span></a><code class="docutils literal notranslate"><span class="pre">y</span></code></p>
+<p><strong>Separate source and build directories (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">y</span></code></p>
 <p>I recommend separating the source and build directories because generally these will each belong to different phases of a project’s life cycle.</p>
 <p><strong>Name prefix for templates and static dir [_]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
 <p>Unless you have a pressing reason to avoid using an underscore to denote standard subdirectories, just use the default. This will give you _templates and _static directories.</p>
@@ -66,7 +68,7 @@ In Windows, press the Windows key and R (Windows icon-R), enter <code class="doc
 <p><strong>Project release []:</strong> <code class="docutils literal notranslate"><span class="pre">&lt;documentation</span> <span class="pre">release</span> <span class="pre">number&gt;</span></code></p>
 <p>The script adds this value to conf.py in the source directory. Generally you’ll be changing this every time you release documentation to your users. Often <code class="docutils literal notranslate"><span class="pre">0.0.1</span></code> is a good start.</p>
 <p><strong>Project language [en]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
-<p>If you’ll be writing documentation in English, then all you need to do is press Enter. Otherwise, check this <cite>list of language codes &lt;http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language&gt;</cite> and enter the two-letter code that matches the language you’ll be using.</p>
+<p>If you’ll be writing documentation in English, then all you need to do is press Enter. Otherwise, check this <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language">list of language codes</a> and enter the two-letter code that matches the language you’ll be using.</p>
 <p><strong>Source file suffix [.rst]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
 <p>The script adds this value to conf.py in the source directory. This is the file extension that Sphinx will use to identify RST documents. In theory, you can use any file extension that you want when creating your documents. In practice, unless you have pressing need to do otherwise, I recommend sticking with the default.</p>
 <p><strong>Name of your master document (without suffix) [index]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
@@ -84,11 +86,11 @@ In Windows, press the Windows key and R (Windows icon-R), enter <code class="doc
 <p>The sphinx-quickstart script will go through a list of standard extensions that you might want to enable. Many of these are the legacy of Sphinx’s origin as a Python code documentation tool; I’ve added an asterisk next to extensions that you’ll want to enable if you want to automatically include docstrings in your documentation. This could be useful for developer-level documentation and API docs.</p>
 <p>The sphinx-quickstart script will add options you enter here to the conf.py file in the base directory.</p>
 <p><strong>*autodoc: automatically insert docstrings from modules (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
-<p>Autodoc takes docstrings from Python code. If you’re not creating documentation from code comments, you won’t need this extension enabled. If you are, though, there’s a good walkthrough here: <cite>Getting Started with Sphinx / Autodoc &lt;https://medium.com/&#64;eikonomega/getting-started-with-sphinx-autodoc-part-1-2cebbbca5365&gt;</cite>.</p>
+<p>Autodoc takes docstrings from Python code. If you’re not creating documentation from code comments, you won’t need this extension enabled. If you are, though, there’s a good walkthrough here: <a class="reference external" href="https://medium.com/&#64;eikonomega/getting-started-with-sphinx-autodoc-part-1-2cebbbca5365">Getting Started with Sphinx / Autodoc</a>.</p>
 <p><strong>*doctest: automatically test code snippets in doctest blocks (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
-<p>The doctest extension checks the code snippets included in your docstrings. Again, if you’re not creating documentation from code comments, you won’t need this. If you are, check out this article: <cite>How to include test in your Python docstrings using doctest &lt;https://thomas-cokelaer.info/tutorials/sphinx/doctest.html&gt;</cite>.</p>
+<p>The doctest extension checks the code snippets included in your docstrings. Again, if you’re not creating documentation from code comments, you won’t need this. If you are, check out this article: <a class="reference external" href="https://thomas-cokelaer.info/tutorials/sphinx/doctest.html">How to include test in your Python docstrings using doctest</a>.</p>
 <p><strong>*intersphinx: link between Sphinx documentation of different projects (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
-<p>You’ll only need the intersphinx extension if you’re creating documentation from code comments AND want to easily link to existing code documentation. See: <cite>Link to other projects’ documentation &lt;https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx&gt;</cite>.</p>
+<p>You’ll only need the intersphinx extension if you’re creating documentation from code comments AND want to easily link to existing code documentation. See: <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx">Link to other projects’ documentation</a>.</p>
 <p><strong>todo: write “todo” entries that can be shown or hidden on build (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">y</span></code></p>
 <p>The todo extension lets you add behind-the-scenes notes on documentation; if you use this and don’t want your users seeing it, ensure that you include <code class="docutils literal notranslate"><span class="pre">todo_include_todos</span> <span class="pre">=</span> <span class="pre">False</span></code> in your conf.py file.</p>
 <p><strong>*coverage: checks for documentation coverage (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
@@ -98,7 +100,7 @@ In Windows, press the Windows key and R (Windows icon-R), enter <code class="doc
 <p><strong>mathjax: include math, rendered in the browser by MathJax (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
 <p>If you’re including complex mathematical equations in your documentation AND want Sphinx to include it in HTML pages in MathJax format, enable this extension (<code class="docutils literal notranslate"><span class="pre">y</span></code>).</p>
 <p><strong>*ifconfig: conditional inclusion of content based on config values (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
-<p>I’m not a fan of this extension; I prefer to include or exclude documents and text using only statements and build parameters. It could be useful for some situations, though – see <cite>ifconfig documentation &lt;https://kite.com/python/docs/sphinx.ext.ifconfig&gt;</cite>.</p>
+<p>I’m not a fan of this extension; I prefer to include or exclude documents and text using only statements and build parameters. It could be useful for some situations, though – see <a class="reference external" href="https://kite.com/python/docs/sphinx.ext.ifconfig">ifconfig documentation</a>.</p>
 <p><strong>*viewcode: include links to the source code of documented Python objects (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code></p>
 <p>Sphinx will automatically link back to the code that it has retrieved docstrings from. If you’re not creating documentation from code comments, you won’t need this extension.</p>
 <p><strong>*githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]:</strong> <code class="docutils literal notranslate"><span class="pre">(press</span> <span class="pre">Enter)</span></code>
@@ -152,10 +154,16 @@ The sphinx-quickstart script should have created the following directories and f
 
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="directory-structure.html">Directory Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using sphinx-quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-your-base-directory">Create your base directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-sphinx-quickstart">Run sphinx-quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-guides">Multiple guides?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="master-file.html">Master File</a></li>
 <li class="toctree-l1"><a class="reference internal" href="base-documents.html">Base documents</a></li>
 </ul>
@@ -164,6 +172,8 @@ The sphinx-quickstart script should have created the following directories and f
 <h3>Related Topics</h3>
 <ul>
   <li><a href="doc-kramers-rst-tutorial.html">Documentation overview</a><ul>
+      <li>Previous: <a href="directory-structure.html" title="previous chapter">Directory Structure</a></li>
+      <li>Next: <a href="master-file.html" title="next chapter">Master File</a></li>
   </ul></li>
 </ul>
 </div>

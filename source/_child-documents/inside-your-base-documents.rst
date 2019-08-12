@@ -22,14 +22,14 @@ The character that you use for each heading level must be consistent. For exampl
 
 Here are the key requirements for heading markers:
 
-* Must use one of these characters: ! ” # $ % & ‘ ( ) * + , – . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+* Must use one of these characters: ``! " # $ % & ' ( ) * + , – . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``
 * Each line of punctuation must have as many or more characters than the heading text.
 * Must include a line of punctuation under the heading text.
 * A line of punctuation above the heading text **may** be included, but isn’t mandatory.
 
 .. note:: Recommendation: Create a style guide as you go that specifies the punctuation used in each heading level. Otherwise, confusion is almost guaranteed.
 
-`See the heading characters used in Python’s Style Guide <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections>`.
+`See the heading characters used in Python’s Style Guide <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections>`_.
 
 Links to child documents
 ........................
